@@ -5,7 +5,7 @@
 #
 
 # Load configuration files
-for file in ./cowtech.d/*; do
+for file in /etc/cowtech.d/*; do
 	[ -x ${file} ] && source ${file}
 done;
 

@@ -17,7 +17,7 @@ prompt_git(){
 }
 
 prompt_rvm(){
-	[ "$(which rvm-prompt1)" != "" -a "$(rvm-prompt i)" != "" ] && echo " $(rvm-prompt i v g)"
+	[ "$(which rvm-prompt)" != "" -a "$(rvm-prompt i)" != "" ] && echo " $(rvm-prompt i v g)"
 }
 
 # # SET USERNAME PROMPT COLOR

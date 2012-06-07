@@ -16,6 +16,10 @@ prompt_git(){
 	git branch --no-color 2>/dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
 }
 
+prompt_rvm(){
+	[ "$(which rvm-prompt)" != "" ] && echo " $(rvm-prompt i v g)"
+}
+
 # # SET USERNAME PROMPT COLOR
 prompt_username_color="${CT_TEXT_COLOR_FG_GREEN}"
 [ "$UID" = "0" ] && prompt_username_color="${CT_TEXT_COLOR_FG_RED}"
@@ -24,7 +28,7 @@ prompt_username_color="${CT_TEXT_COLOR_FG_GREEN}"
 PS1="${CT_TEXT_BOLD}${CT_TEXT_COLOR_FG_YELLOW}[${CT_TEXT_COLOR_FG_WHITE}${prompt_date}${CT_TEXT_COLOR_FG_YELLOW}]${CT_TEXT_DEFAULT}" # DATE
 PS1="${PS1} ${CT_TEXT_COLOR_FG_CYAN}${prompt_dir}${CT_TEXT_COLOR_FG_MAGENTA}\$(prompt_git)${CT_TEXT_DEFAULT}"
 PS1="${PS1}\n"
-PS1="${PS1}${CT_TEXT_BOLD}${CT_TEXT_COLOR_FG_YELLOW}[${prompt_username_color}${prompt_username}@${prompt_hostname}${CT_TEXT_COLOR_FG_YELLOW}]${CT_TEXT_DEFAULT}" # HOST
+PS1="${PS1}${CT_TEXT_BOLD}${CT_TEXT_COLOR_FG_YELLOW}[${prompt_username_color}${prompt_username}@${prompt_hostname}${CT_TEXT_COLOR_FG_MAGENTA}\$(prompt_rvm)${CT_TEXT_COLOR_FG_YELLOW}]${CT_TEXT_DEFAULT}" # HOST
 PS1="${PS1} ${CT_TEXT_BOLD}${CT_TEXT_COLOR_FG_YELLOW}${prompt_type}> ${CT_TEXT_DEFAULT}" 
 
 PS2="${CT_TEXT_BOLD}${CT_TEXT_COLOR_FG_YELLOW}» ${COLOR_DEFAULT}"

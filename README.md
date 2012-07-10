@@ -7,7 +7,7 @@ http://github.com/ShogunPanda/cowtech-sh
 
 Just type the following in a shell and you're done!
 
-`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/install.sh | bash`
+`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/installer | bash`
 
 ## Contributing to cowtech-sh
  

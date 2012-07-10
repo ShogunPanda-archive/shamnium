@@ -9,6 +9,16 @@ Just type the following in a shell and you're done!
 
 `curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/installer | bash`
 
+`source /etc/profile`
+
+## Uninstall
+
+Just type the following in a shell and you're done!
+
+`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/installer | bash -s uninstall`
+
+`source /etc/profile`
+
 ## Contributing to cowtech-sh
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

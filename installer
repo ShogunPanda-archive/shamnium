@@ -7,7 +7,7 @@ then
   exit 1
 fi
 
-COMMAND=$1
+COMMAND="$1"
 DESTDIR=/tmp/cowtech-sh-$(date +%Y%m%d%H%M%S)
 
 if [ "$COMMAND" != "uninstall" ]; then

@@ -3,6 +3,12 @@
 Shell environment by Cowtech.
 http://github.com/ShogunPanda/cowtech-sh
 
+## Install
+
+Just type the following in a shell and you're done!
+
+`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/install.sh | bash`
+
 ## Contributing to cowtech-sh
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

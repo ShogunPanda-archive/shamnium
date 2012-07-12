@@ -7,15 +7,14 @@ http://github.com/ShogunPanda/cowtech-sh
 
 Just type the following in a shell and you're done!
 
-`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/installer | bash`
+`curl -L http://cow.tc/cowtech-sh | bash`
 
 `source /etc/profile`
-
 ## Uninstall
 
 Just type the following in a shell and you're done!
 
-`curl -L https://raw.github.com/ShogunPanda/cowtech-sh/master/installer | bash -s uninstall`
+`curl -L http://cow.tc/cowtech-sh | bash -s uninstall`
 
 `source /etc/profile`
 

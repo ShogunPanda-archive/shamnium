@@ -4,4 +4,6 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-export CT_COWTECH_SH_VERSION="1.3.0"
+if [ -x $HOME/.cowtech_sh_profile ]; then
+	source $HOME/.cowtech_sh_profile;
+fi

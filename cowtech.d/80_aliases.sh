@@ -11,5 +11,3 @@ alias rm='rm -R -v'
 alias cd..='cd ..'
 alias ls='/bin/ls -h -G -F'
 alias sudo='sudo -H'
-
-alias be='bundle exec'

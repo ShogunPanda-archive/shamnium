@@ -8,6 +8,7 @@ require "open-uri"
 
 contents_directory = File.dirname(__FILE__)
 script = "\n[ -x /etc/cowtech.sh ] && source /etc/cowtech.sh;\n"
+bashmarks_url = "https://raw.github.com/Bilalh/bashmarks/master/bashmarks.sh"
 
 desc "Installs the environment."
 task :install do |task|
@@ -49,7 +50,7 @@ namespace :bashmarks do
 	desc "Updates baskmarks."
 	task :update do |task|
 		open(contents_directory + "/cowtech.d/71_bashmark.sh", "w", 0755) do |destination|
-			open("https://raw.github.com/huyng/bashmarks/master/bashmarks.sh") do |source|
+			open(bashmarks_url) do |source|
 				destination.write(source.read)
 			end
 		end

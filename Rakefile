@@ -1,20 +1,20 @@
 #/usr/bin/env ruby
 #
-# This file is part of cowtech-sh. Copyright (C) 2012 and above Shogun <shogun_panda@me.com>.
+# This file is part of shamnium. Copyright (C) 2012 and above Shogun <shogun_panda@me.com>.
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
 require "open-uri"
 
 contents_directory = File.dirname(__FILE__)
-script = "\n[ -x /etc/cowtech.sh ] && source /etc/cowtech.sh;\n"
+script = "\n[ -x /etc/shamnium.sh ] && source /etc/shamnium.sh;\n"
 bashmarks_url = "https://raw.github.com/Bilalh/bashmarks/master/bashmarks.sh"
 
 desc "Installs the environment."
 task :install do |task|
-	files = FileList["cowtech.sh", "cowtech.d"]
+	files = FileList["shamnium.sh", "shamnium.d"]
 	FileUtils.cp_r(files, "/etc/", :verbose => true)
-	FileUtils.chmod_R(0755, FileList["/etc/cowtech.sh", "/etc/cowtech.d"], :verbose => true)
+	FileUtils.chmod_R(0755, FileList["/etc/shamnium.sh", "/etc/shamnium.d"], :verbose => true)
 
 	# Patch the profile file
 	File.open("/etc/profile", "r+") do |f|
@@ -26,12 +26,12 @@ task :install do |task|
 		end
 	end	
 
-	puts "-------\n\nTo load cowtech.sh, just type: source /etc/profile"	
+	puts "-------\n\nTo load shamnium.sh, just type: source /etc/profile"	
 end
 
 desc "Uninstalls the environment."
 task :uninstall do |task|
-	FileUtils.rm_r(FileList["/etc/cowtech.sh", "/etc/cowtech.d"], :verbose => true)
+	FileUtils.rm_r(FileList["/etc/shamnium.sh", "/etc/shamnium.d"], :verbose => true)
 
 	contents = ""
 	# Patch the profile file
@@ -43,13 +43,13 @@ task :uninstall do |task|
 		f.write(contents.gsub(script, ""))
 	end	
 
-	puts "-------\n\nTo unload cowtech.sh, just type: source /etc/profile"	
+	puts "-------\n\nTo unload shamnium.sh, just type: source /etc/profile"	
 end
 
 namespace :bashmarks do
 	desc "Updates baskmarks."
 	task :update do |task|
-		open(contents_directory + "/cowtech.d/71_bashmark.sh", "w", 0755) do |destination|
+		open(contents_directory + "/shamnium.d/71_bashmark.sh", "w", 0755) do |destination|
 			open(bashmarks_url) do |source|
 				destination.write(source.read)
 			end
@@ -57,4 +57,4 @@ namespace :bashmarks do
 	end
 end
 
-task :default => ["cowtech_sh:install"]
+task :default => ["install"]

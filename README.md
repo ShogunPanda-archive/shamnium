@@ -1,24 +1,25 @@
-# cowtech-lib
+# shamnium
 
 Shell environment by Cowtech.
-http://github.com/ShogunPanda/cowtech-sh
+http://github.com/ShogunPanda/shamnium
 
 ## Install
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/cowtech-sh | bash`
+`curl -L http://cow.tc/shamnium | bash`
 
 `source /etc/profile`
+
 ## Uninstall
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/cowtech-sh | bash -s uninstall`
+`curl -L http://cow.tc/shamnium | bash -s uninstall`
 
 `source /etc/profile`
 
-## Contributing to cowtech-sh
+## Contributing to shamnium
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

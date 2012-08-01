@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# This file is part of shamnium. Copyright (C) 2012 and above Shogun <shogun_panda@me.com>.
+# Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
+#
 
 if [[ -n "${BASH_VERSION:-}" ]] &&
   (( 65536 * ${BASH_VERSINFO[0]} + 256 * ${BASH_VERSINFO[1]} + ${BASH_VERSINFO[2]} < 197145 ))
@@ -8,10 +12,10 @@ then
 fi
 
 COMMAND="$1"
-DESTDIR=/tmp/cowtech-sh-$(date +%Y%m%d%H%M%S)
+DESTDIR=/tmp/shamnium-$(date +%Y%m%d%H%M%S)
 
 if [ "$COMMAND" != "uninstall" ]; then
   COMMAND="install"
 fi
 
-git clone https://github.com/ShogunPanda/cowtech-sh -- $DESTDIR && cd $DESTDIR && sudo rake $COMMAND && rm -rf $DESTDIR
+git clone https://github.com/ShogunPanda/shamnium -- $DESTDIR && cd $DESTDIR && sudo rake $COMMAND && rm -rf $DESTDIR

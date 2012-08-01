@@ -1,6 +1,7 @@
 # shamnium
 
-Shell environment by Cowtech.
+A useful shell environment.
+
 http://github.com/ShogunPanda/shamnium
 
 ## Install

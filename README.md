@@ -8,7 +8,7 @@ http://github.com/ShogunPanda/shamnium
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/shamnium | bash`
+`curl -L http://cow.tc/shamnium-installer | bash`
 
 `source /etc/profile`
 
@@ -16,7 +16,7 @@ Just type the following in a shell and you're done!
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/shamnium | bash -s uninstall`
+`curl -L http://cow.tc/shamnium-installer | bash -s uninstall`
 
 `source /etc/profile`
 

@@ -4,6 +4,6 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-EDITOR="subl -w"
+EDITOR="nano"
 
 export EDITOR

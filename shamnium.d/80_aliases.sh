@@ -9,5 +9,5 @@ alias mv='mv -v -i'
 alias rm='rm -R -v'
 
 alias cd..='cd ..'
-alias ls='/bin/ls -h -G -F'
+alias ls='/bin/ls -h -F'
 alias sudo='sudo -H'

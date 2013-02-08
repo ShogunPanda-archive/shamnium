@@ -60,4 +60,13 @@ namespace :bashmarks do
 	end
 end
 
+namespace :site do
+	desc "Updates site installer."
+	task :update_installer do |task|
+		system("git checkout gh-pages")
+		system("curl -s -o installer https://raw.github.com/ShogunPanda/shamnium/master/installer && git commit -qam \"Updated site installer.\" && git push -q")
+		system("git checkout master")
+	end
+end
+
 task :default => ["install"]

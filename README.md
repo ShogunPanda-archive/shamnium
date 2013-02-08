@@ -2,13 +2,13 @@
 
 A useful shell environment.
 
-http://github.com/ShogunPanda/shamnium
+http://sw.cow.tc/shamnium
 
 ## Install
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/shamnium-installer | bash`
+`curl -L http://sw.cow.tc/shamnium/installer | bash`
 
 `source /etc/profile`
 
@@ -16,7 +16,7 @@ Just type the following in a shell and you're done!
 
 Just type the following in a shell and you're done!
 
-`curl -L http://cow.tc/shamnium-installer | bash -s uninstall`
+`curl -L http://sw.cow.tc/shamnium/installer | bash -s uninstall`
 
 `source /etc/profile`
 
@@ -31,5 +31,6 @@ Just type the following in a shell and you're done!
 
 ## Copyright
 
-Copyright (C) 2012 and above Shogun <shogun_panda@me.com>.
+Copyright (C) 2013 and above Shogun (shogun_panda@me.com).
+
 Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.

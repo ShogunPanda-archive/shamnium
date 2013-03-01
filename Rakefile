@@ -8,7 +8,12 @@ require "open-uri"
 
 contents_directory = File.dirname(__FILE__)
 script = "\n[ -x /etc/shamnium.sh ] && source /etc/shamnium.sh;\n"
-bashmarks_url = "https://raw.github.com/Bilalh/bashmarks/master/bashmarks.sh"
+
+external_scripts = {
+	"bashmarks" => ["71_bashmark", "https://raw.github.com/Bilalh/bashmarks/master/bashmarks.sh"],
+	"git-completion" => ["72_git_completion", "https://raw.github.com/git/git/master/contrib/completion/git-completion.bash"]
+}
+
 quiet = (ENV["SHAMNIUM_QUIET"] =~ /^(1|on|true|yes|t|y)$/i)
 
 desc "Installs the environment."
@@ -49,11 +54,17 @@ task :uninstall do |task|
 	puts "-------\n\nTo unload shamnium.sh, just type: source /etc/profile"	if !quiet
 end
 
-namespace :bashmarks do
-	desc "Updates baskmarks."
-	task :update do |task|
-		open(contents_directory + "/shamnium.d/71_bashmark.sh", "w", 0755) do |destination|
-			open(bashmarks_url) do |source|
+namespace :external do
+	desc "Updates an external script."
+	task :update, :name do |task, args|
+		script = args[:name].to_s
+
+		raise RuntimeError.new("You have to specify the name of script to update. Valid scripts are: #{external_scripts.keys.join(", ")}.") if script.strip.length == 0
+		raise RuntimeError.new("External script #{script} is not valid. Valid scripts are: #{external_scripts.keys.join(", ")}.") if !external_scripts[script]
+		script = external_scripts[script]	
+
+		open(contents_directory + "/shamnium.d/#{script[0]}.sh", "w", 0755) do |destination|
+			open(script[1]) do |source|
 				destination.write(source.read)
 			end
 		end

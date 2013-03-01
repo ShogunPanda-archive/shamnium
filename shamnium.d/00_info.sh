@@ -4,4 +4,4 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-export SHAMNIUM_VERSION="1.2.0"
+export SHAMNIUM_VERSION="1.3.0"

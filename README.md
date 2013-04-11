@@ -4,6 +4,8 @@ A useful shell environment.
 
 http://sw.cow.tc/shamnium
 
+http://github.com/ShogunPanda/shamnium
+
 ## Install
 
 Just type the following in a shell and you're done!

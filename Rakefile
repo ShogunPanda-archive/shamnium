@@ -6,8 +6,9 @@
 
 require "open-uri"
 
+home = ENV["HOME"]
 contents_directory = File.dirname(__FILE__)
-script = "\n[ -x /etc/shamnium.sh ] && source /etc/shamnium.sh;\n"
+script = "\n[ -x $HOME/.shamnium/loader.sh ] && source $HOME/.shamnium/loader.sh;\n"
 quiet = (ENV["SHAMNIUM_QUIET"] =~ /^(1|on|true|yes|t|y)$/i)
 
 external_scripts = {
@@ -18,12 +19,13 @@ external_scripts = {
 
 desc "Installs the environment."
 task :install do |task|
-	files = FileList["shamnium.sh", "shamnium.d"]
-	FileUtils.cp_r(files, "/etc/", :verbose => !quiet)
-	FileUtils.chmod_R(0755, FileList["/etc/shamnium.sh", "/etc/shamnium.d"], :verbose => !quiet)
+	files = FileList["loader.sh", "modules"]
+	FileUtils.mkdir_p("#{home}/.shamnium/", :verbose => !quiet)
+	FileUtils.cp_r(files, "#{home}/.shamnium/", :verbose => !quiet)
+	FileUtils.chmod_R(0755, FileList["#{home}/.shamnium/"], :verbose => !quiet)
 
 	# Patch the profile file
-	File.open("/etc/profile", "r+") do |f|
+	File.open("#{home}/.bashrc", "w+") do |f|
 		contents = f.read
 
 		if !contents.include?(script) then
@@ -32,26 +34,20 @@ task :install do |task|
 		end
 	end	
 
-	puts "-------\n\nTo load shamnium.sh, just type: source /etc/profile"	if !quiet
+	system("source #{home}/.bashrc")
 end
 
 desc "Uninstalls the environment."
 task :uninstall do |task|
 	verbose = /^(1|on|true|yes|t|y)$/i.match(args[:verbose]) || false
 	
-	FileUtils.rm_r(FileList["/etc/shamnium.sh", "/etc/shamnium.d"], :verbose => !quiet)
+	FileUtils.rm_r(FileList["#{home}/.shamnium/"], :verbose => !quiet)
 
-	contents = ""
 	# Patch the profile file
-	File.open("/etc/profile", "r+") do |f|
-		contents = f.read
-	end
-
-	File.open("/etc/profile", "w+") do |f|
-		f.write(contents.gsub(script, ""))
-	end	
-
-	puts "-------\n\nTo unload shamnium.sh, just type: source /etc/profile"	if !quiet
+	contents = ""
+	File.open("#{home}/.bashrc", "r+") { |f| contents = f.read }
+	File.open("#{home}/.bashrc", "w") { |f| f.write(contents.gsub(script, "")) }
+	system("source #{home}/.bashrc") if File.exist('#{home}/.bashrc')
 end
 
 namespace :external do

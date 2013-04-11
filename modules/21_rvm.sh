@@ -4,12 +4,8 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-# Load configuration files
-for file in /etc/shamnium.d/*; do
-	[ -x ${file} ] && source ${file}
-done;
+[ -f ${rvm_path}/scripts/rvm ] && source ${rvm_path}/scripts/rvm;
 
-# Load additional configuration files
-for file in /etc/profile.d/*; do
-	[ -x ${file} ] && source ${file}
-done;
+rvm_prompt(){
+  [ "$(which rvm-prompt)" != "" -a "$(rvm-prompt i)" != "" ] && echo " $(rvm-prompt i v g)"
+}

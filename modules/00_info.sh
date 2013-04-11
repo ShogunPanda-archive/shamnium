@@ -4,4 +4,4 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-[ -f ${rvm_path}/scripts/rvm ] && source ${rvm_path}/scripts/rvm;
+export SHAMNIUM_VERSION="2.0.0"

@@ -7,5 +7,5 @@ fi
 git_prompt(){
   branch=$(git bn)
   revision=$(git rev-parse --short HEAD)
-  [ "${branch}" != "" ] && echo " @ ${branch}[${revision}]"
+  [ "${branch}" != "" ] && echo " (${branch}@${revision})"
 }

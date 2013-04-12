@@ -10,13 +10,13 @@ https://github.com/ShogunPanda/shamnium
 
 Just type the following in a shell and you're done!
 
-`curl -L http://sw.cow.tc/shamnium/installer | bash -s install`
+`curl -L http://sw.cow.tc/shamnium/installer | bash -s -- install`
 
 ## Uninstall
 
 Just type the following in a shell and you're done!
 
-`curl -L http://sw.cow.tc/shamnium/installer | bash -s uninstall`
+`curl -L http://sw.cow.tc/shamnium/installer | bash -s -- uninstall`
 
 ## Contributing to shamnium
  

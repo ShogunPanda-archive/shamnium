@@ -4,7 +4,7 @@ Some useful shell extension for bash.
 
 http://sw.cow.tc/shamnium
 
-http://github.com/ShogunPanda/shamnium
+https://github.com/ShogunPanda/shamnium
 
 ## Install
 

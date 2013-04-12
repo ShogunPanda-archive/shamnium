@@ -59,7 +59,7 @@ namespace :external do
 		raise RuntimeError.new("External script #{script} is not valid. Valid scripts are: #{external_scripts.keys.join(", ")}.") if !external_scripts[script_arg]
 		final_script = external_scripts[script_arg]	
 
-		open(contents_directory + "/shamnium.d/#{final_script[0]}.sh", "w", 0755) do |destination|
+		open(contents_directory + "/modules/#{final_script[0]}.sh", "w", 0755) do |destination|
 			open(final_script[1]) do |source|
 				destination.write(source.read)
 			end

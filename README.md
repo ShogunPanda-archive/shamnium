@@ -1,6 +1,6 @@
 # shamnium
 
-A useful shell environment.
+Some useful shell extension for bash.
 
 http://sw.cow.tc/shamnium
 
@@ -12,15 +12,11 @@ Just type the following in a shell and you're done!
 
 `curl -L http://sw.cow.tc/shamnium/installer | bash`
 
-`source /etc/profile`
-
 ## Uninstall
 
 Just type the following in a shell and you're done!
 
 `curl -L http://sw.cow.tc/shamnium/installer | bash -s uninstall`
-
-`source /etc/profile`
 
 ## Contributing to shamnium
  

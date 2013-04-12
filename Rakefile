@@ -39,8 +39,6 @@ end
 
 desc "Uninstalls the environment."
 task :uninstall do |task|
-	verbose = /^(1|on|true|yes|t|y)$/i.match(args[:verbose]) || false
-	
 	FileUtils.rm_r(FileList["#{home}/.shamnium/"], :verbose => !quiet)
 
 	# Patch the profile file

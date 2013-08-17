@@ -12,10 +12,7 @@ then
 fi
 
 COMMAND="$1"
+[ "$COMMAND" != "uninstall" ] && COMMAND="install"
 DESTDIR=/tmp/shamnium-$(date +%Y%m%d%H%M%S)
-
-if [ "$COMMAND" != "uninstall" ]; then
-  COMMAND="install"
-fi
 
 git clone https://github.com/ShogunPanda/zishamnium -q -- "${DESTDIR}" && cd "${DESTDIR}" && sudo rake "${COMMAND}[true]" && rm -rf "${DESTDIR}"

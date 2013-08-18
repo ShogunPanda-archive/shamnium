@@ -72,6 +72,7 @@ namespace :site do
     system("git checkout gh-pages")
     system("curl -s -o installer https://raw.github.com/ShogunPanda/shamnium/master/installer && git commit -qam \"Updated site installer.\" && git push -q")
     system("git checkout master")
+    system("git branch -D gh-pages")
   end
 end
 

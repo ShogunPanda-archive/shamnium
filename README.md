@@ -6,6 +6,8 @@ http://sw.cow.tc/shamnium
 
 https://github.com/ShogunPanda/shamnium
 
+[![Bitdeli Trend](https://d2weczhvl823v0.cloudfront.net/ShogunPanda/shamnium/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 ## Install
 
 Just type the following in a shell and you're done!

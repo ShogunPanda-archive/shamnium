@@ -2,7 +2,7 @@
 
 Some useful shell extension for bash.
 
-http://sw.cow.tc/shamnium
+http://sw.cowtech.it/shamnium
 
 https://github.com/ShogunPanda/shamnium
 
@@ -12,7 +12,7 @@ https://github.com/ShogunPanda/shamnium
 
 Just type the following in a shell and you're done!
 
-`curl -L http://sw.cow.tc/shamnium/installer | bash -s -- install`
+`curl -L http://sw.cowtech.it/shamnium/installer | bash -s -- install`
 
 ### Install Git aliases
 
@@ -22,7 +22,7 @@ Just type the following in a shell and you're done!
 
 Just type the following in a shell and you're done!
 
-`curl -L http://sw.cow.tc/shamnium/installer | bash -s -- uninstall`
+`curl -L http://sw.cowtech.it/shamnium/installer | bash -s -- uninstall`
 
 ## Contributing to shamnium
  

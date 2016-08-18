@@ -2,11 +2,7 @@
 
 Some useful shell extension for bash.
 
-http://sw.cowtech.it/shamnium
-
-https://github.com/ShogunPanda/shamnium
-
-[![Bitdeli Trend](https://d2weczhvl823v0.cloudfront.net/ShogunPanda/shamnium/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+https://sw.cowtech.it/shamnium
 
 ## Install
 

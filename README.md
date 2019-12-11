@@ -1,12 +1,8 @@
 # shamnium
 
+## END OF DEVELOPMENT NOTICE - This extension has been discontinued
+
 Some useful shell extension for bash.
-
-https://sw.cowtech.it/shamnium
-
-## END OF DEVELOPMENT NOTICE
-
-# This extension has been discontinued.
 
 ## Install
 
